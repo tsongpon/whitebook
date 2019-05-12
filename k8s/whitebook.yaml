@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whitebook
+  labels:
+    app: whitebook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: whitebook
+  template:
+    metadata:
+      labels:
+        app: whitebook
+    spec:
+      containers:
+        - image: tsongpon/whitebook
+          name: whitebook
+          env:
+            - name: DB_PASSWORD
+              value: pingu123
+            - name: DB_HOST
+              value: mysql
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: whitebook
+  labels:
+    app: whitebook
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: whitebook
