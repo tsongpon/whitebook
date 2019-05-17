@@ -18,10 +18,8 @@ spec:
         - image: tsongpon/whitebook
           name: whitebook
           env:
-            - name: DB_PASSWORD
-              value: pingu123
-            - name: DB_HOST
-              value: mysql
+            - name: STORY_API_URL
+              value: http://yoneebook:5000
 ---
 apiVersion: v1
 kind: Service

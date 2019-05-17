@@ -1,4 +1,4 @@
-const API = 'http://localhost:5000/v1/stories'
+const API = process.env.STORY_API_URL+'/v1/stories'
 
 export function getStories(start, size) {
     return fetch(API + "?shortcontent=true&start="+start+"&size="+size).then(res => res.json())
