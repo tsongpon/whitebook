@@ -1,6 +1,7 @@
 const API = process.env.STORY_API_URL+'/v1/stories'
 
 export function getStories(start, size) {
+    console.log(`fetching from ${API}`)
     return fetch(API + "?shortcontent=true&start="+start+"&size="+size).then(res => res.json())
         .catch(err => {
             console.log(err)
