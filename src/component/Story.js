@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getStory } from '../util/StoryAPI'
+import Photo from './Photo'
 
 export default class Story extends Component {
     constructor(props) {
@@ -26,6 +27,7 @@ export default class Story extends Component {
                         {this.state.story.title}
                     </div>
                     <div className="card-body">
+                        <Photo />
                         <p style={{'whiteSpace':'pre-line'}} className="card-text">{this.state.story.content}</p>
                     </div>
                 </div>
