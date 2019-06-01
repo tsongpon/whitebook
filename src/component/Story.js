@@ -5,7 +5,6 @@ export default class Story extends Component {
     constructor(props) {
         super(props)
         this.storyId = props.match.params.id
-        console.log(props.match.params.id)
         this.state = {
             story: {}
         }
@@ -13,7 +12,6 @@ export default class Story extends Component {
 
     componentDidMount() {
         getStory(this.storyId).then(data => {
-            console.log(data)
             this.setState({
                 story: data
             })
@@ -28,7 +26,7 @@ export default class Story extends Component {
                         {this.state.story.title}
                     </div>
                     <div className="card-body">
-                        <p style={{'white-space':'pre-line'}} className="card-text">{this.state.story.content}</p>
+                        <p style={{'whiteSpace':'pre-line'}} className="card-text">{this.state.story.content}</p>
                     </div>
                 </div>
             </div>
