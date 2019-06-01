@@ -1,4 +1,4 @@
-const API = 'http://35.187.247.254/v1/stories'
+const API = 'http://35.240.133.229/v1/stories'
 
 export function getStories(start, size) {
     return fetch(API + "?shortcontent=true&start="+start+"&size="+size).then(res => res.json())
