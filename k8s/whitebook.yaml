@@ -15,7 +15,7 @@ spec:
         app: whitebook
     spec:
       containers:
-        - image: tsongpon/whitebook
+        - image: tsongpon/whitebook:latest
           name: whitebook
           env:
             - name: process.env.REACT_APP_API_URL
