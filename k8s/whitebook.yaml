@@ -17,6 +17,7 @@ spec:
       containers:
         - image: tsongpon/whitebook:latest
           name: whitebook
+          imagePullPolicy: Always
           env:
             - name: REACT_APP_API_URL
               value: http://35.240.197.95/v1/stories
@@ -31,7 +32,7 @@ spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: 80
       protocol: TCP
   selector:
     app: whitebook
